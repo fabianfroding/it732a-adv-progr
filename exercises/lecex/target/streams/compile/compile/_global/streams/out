@@ -1,5 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Factorial.scala:5:20: not enough arguments for method go: (s: Int, n: Int, res: Int)Int.[0m
-[0m[[0m[31merror[0m] [0m[0mUnspecified value parameter res.[0m
-[0m[[0m[31merror[0m] [0m[0m            else go(s + 1, res * n)[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Digits.scala:7:32: value ++ is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m            else go(n / 10, tot++)[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
