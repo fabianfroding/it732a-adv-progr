@@ -1,7 +1,10 @@
 object SumDigits {
     def sumDigits(n: Int): Int = {
-        def go(n: Int, res: Int): Int =
-            0
+        def go(n: Int, res: Int): Int = {
+            println(n)
+            if (n <= 0) res
+            else go(n / 10, res + (n % 10))
+        }
         
         go(n, 0)
     }
@@ -12,6 +15,6 @@ object SumDigits {
     }
 
     def main(args: Array[String]): Unit = {
-        println("woos")
+        println(formatSumDigits(5))
     }
 }

@@ -1,1 +1,1 @@
-scalac -bootclasspath C:\Users\Fabian\.sbt\boot\scala-2.12.10\lib\scala-library.jar -classpath C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\target\scala-2.12\classes C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Digits.scala
+scalac -bootclasspath C:\Users\Fabian\.sbt\boot\scala-2.12.10\lib\scala-library.jar -classpath C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\target\scala-2.12\classes C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\SumDigits.scala
