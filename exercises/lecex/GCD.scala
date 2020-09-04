@@ -1,18 +1,19 @@
 object GCD {
     def gcd(n: Int, k: Int): Int = {
-        // Need to nest the loop to compare each divisor of n with each diisor of k... O(n^(k))...
+        /* n % k gives us the remainder of how many k's goes into n.
+            Ex: n = 54, k = 24: 24 goes into 54 two times, leaving 6 behind.
+            We then call gcd recursively with 6 as k parameter, resulting in:
+            gcd(24, 6) -> 24 % 6 = 0 ->
+            The next iteration then gives us:
+            gcd(6, 0) -> 6
 
-        def go(n: Int, k: Int, i: Int): Int = {
-            if (i > 0) {
-                println("%d / %d is %d".format(n, i, n/i))
-                println("%d / %d is %d".format(k, i, k/i))
-            }
-            
-            if (i == 0 || n / i == k / i) i
-            else go(n, k, i - 1)
-        }
-
-        go(n, k, if (n > k) n else k)
+            gcd(54, 24)
+            gcd(24, 6)
+            gcd(6, 0)
+            Right value shifts to left each iteration.
+        */
+        // If the second number is 0, we have found the GCD.
+        if (k == 0) n else gcd(k, n % k)
     }
 
     def formatGCD(n: Int, k: Int) = {
