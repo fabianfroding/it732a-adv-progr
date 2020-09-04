@@ -23,5 +23,8 @@ object GCD {
 
     def main(args: Array[String]): Unit = {
         println(formatGCD(54, 24))
+        println(formatGCD(10, 55)) // = 5
+        println(formatGCD(21, 9)) // = 3
+        println(formatGCD(11, 23))
     }
 }
