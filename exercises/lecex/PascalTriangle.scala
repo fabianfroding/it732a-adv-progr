@@ -1,14 +1,17 @@
 object PascalTriangle {
-    def pascal(n: Int, k: Int): Int = {
-
+    def pascal(r: Int, c: Int): Int = {
+        if (r == 0 || r == c) 1
+        else pascal(r - 1, c - 1) + pascal(r - 1, c)
     }
 
-    def formatPascal(n: Int) = {
-        val msg = "hey %d %d"
-        msg.format(n, pascal(0, n))
+    def formatPascal(r: Int, c: Int) = {
+        val msg = "The pascal value at row %d and col %d is %d"
+        msg.format(r, c, pascal(r, c))
     }
 
     def main(args: Array[String]): Unit = {
-        println("wesh")
+        println(formatPascal(1, 1))
+        println(formatPascal(3, 2))
+        //println(formatPascal(8, 4))
     }
 }
