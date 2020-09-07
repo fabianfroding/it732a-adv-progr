@@ -1,13 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\SquareElements.scala:3:27: overloaded method value + with alternatives:[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Double)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Float)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Long)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Int)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Char)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Short)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Byte)Double <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: String)String[0m
-[0m[[0m[31merror[0m] [0m[0m cannot be applied to (List[Int])[0m
-[0m[[0m[31merror[0m] [0m[0m        math.sqrt(l.head) + square(l.tail)[0m
-[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\SquareElements.scala:4:34: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Double[0m
+[0m[[0m[31merror[0m] [0m[0m required: Int[0m
+[0m[[0m[31merror[0m] [0m[0m        else math.pow(l.head, 2) :: square(l.tail)[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

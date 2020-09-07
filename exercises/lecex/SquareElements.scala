@@ -1,7 +1,7 @@
 object SquareElements {
     def square(l: List[Int]): List[Int] = {
-        newL = List[Int]
-        math.sqrt(l.head) + square(l.tail)
+        if (l.isEmpty) List()
+        else math.pow(l.head, 2).toInt :: square(l.tail)
     }
 
     def formatSquare(l: List[Int]) = {
@@ -10,6 +10,7 @@ object SquareElements {
     }
 
     def main(args: Array[String]): Unit = {
-
+        println(formatSquare(List(1, 2, 3, 4, 5))) // = List(1, 4, 9, 16, 25)
+        println(formatSquare(List(12, 56, 32))) // = List(144, 3136, 1024)
     }
 }
