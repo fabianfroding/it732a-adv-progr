@@ -1,43 +1,28 @@
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	added: Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Reverse.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Concatenate.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Concatenate)[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Reverse.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Concatenate)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Concatenate.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Concatenate[0m
 [0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\target\scala-2.12\classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.3.5:compile for Scala 2.12.10[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.3.5:compile for Scala 2.12.10[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 59f1a61e for Scala compiler version 2.12.10[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 1796fe8c for Scala compiler version 2.12.10[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Fabian\.sbt\boot\scala-2.12.10\lib\scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\target\scala-2.12\classes[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.2796654 s[0m
-[0m[[0m[0mdebug[0m] [0m[0mDone compiling.[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from Reverse...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Reverse[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(Reverse)[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(Reverse,ModifiedNames(changes = UsedName($asInstanceOf,[Default]), UsedName(notify,[Default]), UsedName(isInstanceOf,[Default]), UsedName(notifyAll,[Default]), UsedName(reverse,[Default]), UsedName($isInstanceOf,[Default]), UsedName(ne,[Default]), UsedName(hashCode,[Default]), UsedName(##,[Default]), UsedName(asInstanceOf,[Default]), UsedName(synchronized,[Default]), UsedName(formatReverse,[Default]), UsedName(equals,[Default]), UsedName(clone,[Default]), UsedName(Reverse,[Default]), UsedName(finalize,[Default]), UsedName(wait,[Default]), UsedName(eq,[Default]), UsedName(==,[Default]), UsedName(toString,[Default]), UsedName(getClass,[Default]), UsedName(!=,[Default]), UsedName(main,[Default]))) invalidates 1 classes due to The Reverse has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName($asInstanceOf,[Default]), UsedName(notify,[Default]), UsedName(isInstanceOf,[Default]), UsedName(notifyAll,[Default]), UsedName(reverse,[Default]), UsedName($isInstanceOf,[Default]), UsedName(ne,[Default]), UsedName(hashCode,[Default]), UsedName(##,[Default]), UsedName(asInstanceOf,[Default]), UsedName(synchronized,[Default]), UsedName(formatReverse,[Default]), UsedName(equals,[Default]), UsedName(clone,[Default]), UsedName(Reverse,[Default]), UsedName(finalize,[Default]), UsedName(wait,[Default]), UsedName(eq,[Default]), UsedName(==,[Default]), UsedName(toString,[Default]), UsedName(getClass,[Default]), UsedName(!=,[Default]), UsedName(main,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(Reverse)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
-[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
-[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
+[0m[[0m[0mdebug[0m] [0m[0mCompilation failed (CompilerInterface)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
