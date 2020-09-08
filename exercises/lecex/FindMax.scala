@@ -1,8 +1,13 @@
 object FindMax {
     def max(l: List[Int]): Int = {
         def go(l: List[Int], m: Int): Int = {
-            if (m < l.tail(0)) go(l.tail, l.tail(0))
-            else 
+            if (!l.tail.isEmpty) {
+                if (m < l.tail(0)) go(l.tail, l.tail(0))
+                else go(l.tail, m)
+            }
+            else {
+                m
+            }
         }
 
         go(l, l.head)
