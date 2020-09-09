@@ -2,7 +2,7 @@ object Reverse {
     def reverse(l: List[Int]): List[Int] = {
         def go(l: List[Int], res: List[Int]): List[Int] = {
             if (l.isEmpty) res
-            else go(l.tail, l.head :: res) // Why does it APPEND the element? The :: is suposed to PREPEND.
+            else go(l.tail, l.head :: res)
         }
 
         go(l, List[Int]())
