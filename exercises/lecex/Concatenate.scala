@@ -1,8 +1,8 @@
 object Concatenate {
     def concatenate(l: List[Int], n: List[Int]): List[Int] = {
         def go(l: List[Int], n: List[Int], res: List[Int]): List[Int] = {
-            if (!l.isEmpty) go(l.tail, n, l.head :: res) // NEEDS FIX
-            else if (!n.isEmpty) go(l, n.tail, n.head :: res)
+            if (!l.isEmpty) go(l.tail, n, res :+ l.head)
+            else if (!n.isEmpty) go(l, n.tail, res :+ n.head)
             else res
         }
 
