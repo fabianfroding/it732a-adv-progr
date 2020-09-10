@@ -1,13 +1,10 @@
 object Zip {
     def zip(l: List[Int], n: List[Int]): List[(Int, Int)] = {
         def go(l: List[Int], n: List[Int], res: List[(Int, Int)]): List[(Int, Int)] = {
-            
+            if (l.isEmpty || n.isEmpty) res
+            else go(l.tail, n.tail, res :+ (l.head, n.head))
         }
-
-        if (l.isEmpty && n.isEmpty) Nil
-        else if (!l.isEmpty && n.isEmpty) List(l.head, Nil)
-        else if (l.isEmpty && !n.isEmpty) List(n.head, Nil)
-        (l.head, n.head) :: zip(l.tail, n.tail)
+        go(l, n, List[(Int, Int)]())
     }
 
     def formatZip(l: List[Int], n: List[Int]) = {
