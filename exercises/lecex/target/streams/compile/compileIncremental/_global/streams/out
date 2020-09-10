@@ -1,31 +1,40 @@
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Zip.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\HasSubSeq.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(Zip)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(Zip)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Zip.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Zip[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\HasSubSeq.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
 [0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\target\scala-2.12\classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.3.5:compile for Scala 2.12.10[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.3.5:compile for Scala 2.12.10[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 646c7674 for Scala compiler version 2.12.10[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler f63e2e5 for Scala compiler version 2.12.10[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Fabian\.sbt\boot\scala-2.12.10\lib\scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\target\scala-2.12\classes[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.2127055 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 0.2431761 s[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from HasSubSeq...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: HasSubSeq[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(HasSubSeq)[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(HasSubSeq,ModifiedNames(changes = UsedName(getClass,[Default]), UsedName(notifyAll,[Default]), UsedName(hashCode,[Default]), UsedName(asInstanceOf,[Default]), UsedName(clone,[Default]), UsedName(synchronized,[Default]), UsedName(toString,[Default]), UsedName(==,[Default]), UsedName(main,[Default]), UsedName(isInstanceOf,[Default]), UsedName(wait,[Default]), UsedName(hasSubsequence,[Default]), UsedName($isInstanceOf,[Default]), UsedName($asInstanceOf,[Default]), UsedName(ne,[Default]), UsedName(finalize,[Default]), UsedName(notify,[Default]), UsedName(HasSubSeq,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(eq,[Default]), UsedName(equals,[Default]))) invalidates 1 classes due to The HasSubSeq has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(getClass,[Default]), UsedName(notifyAll,[Default]), UsedName(hashCode,[Default]), UsedName(asInstanceOf,[Default]), UsedName(clone,[Default]), UsedName(synchronized,[Default]), UsedName(toString,[Default]), UsedName(==,[Default]), UsedName(main,[Default]), UsedName(isInstanceOf,[Default]), UsedName(wait,[Default]), UsedName(hasSubsequence,[Default]), UsedName($isInstanceOf,[Default]), UsedName($asInstanceOf,[Default]), UsedName(ne,[Default]), UsedName(finalize,[Default]), UsedName(notify,[Default]), UsedName(HasSubSeq,[Default]), UsedName(!=,[Default]), UsedName(##,[Default]), UsedName(eq,[Default]), UsedName(equals,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(HasSubSeq)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m

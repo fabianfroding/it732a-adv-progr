@@ -1,7 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Zip.scala:5:30: value isEmpty is not a member of Int[0m
-[0m[[0m[31merror[0m] [0m[0m            else if (!l.head.isEmpty || !n.head.isEmpty) res[0m
-[0m[[0m[31merror[0m] [0m[0m                             ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\Zip.scala:5:49: value isEmpty is not a member of Int[0m
-[0m[[0m[31merror[0m] [0m[0m            else if (!l.head.isEmpty || !n.head.isEmpty) res[0m
-[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere was one feature warning; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
