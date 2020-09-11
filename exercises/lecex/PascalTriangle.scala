@@ -2,6 +2,8 @@ object PascalTriangle {
     def pascal(r: Int, c: Int): Int = {
         if (r == 0 || r == c) 1
         else pascal(r - 1, c - 1) + pascal(r - 1, c)
+
+        // Maybe need to use tail recursion?
     }
 
     def formatPascal(r: Int, c: Int) = {
