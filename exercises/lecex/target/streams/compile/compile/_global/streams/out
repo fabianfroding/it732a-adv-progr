@@ -1,2 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0mthere was one feature warning; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\PascalTriangle.scala:22:9: not found: value ptinyln[0m
+[0m[[0m[31merror[0m] [0m[0m        ptinyln(formatPascal(3, 3)) // = 1[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
