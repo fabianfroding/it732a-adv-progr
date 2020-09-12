@@ -1,17 +1,9 @@
 object HasSubSeq {
     def hasSubsequence(l: List[Int], sub: List[Int]): Boolean = {
-        
-
-        // Check if l.head == sub.head, if so: call recursivevely:
-            // hasSubsequence(l.tail, sub.tail) IF they no longer match AND sub is NOT empty, return false
-            // if they do match, call recursive again
-            // if they no longer match AND sub is empty, return true
-        // if not, move on to next l.head
-
         if (l.head == sub.head && !l.tail.isEmpty && !sub.tail.isEmpty) hasSubsequence(l.tail, sub.tail)
-        else if (l.head != sub.head && !sub.tail.isEmpty) false
-        else if (l.head != sub.head && sub.tail.isEmpty) hasSubsequence(l.tail, sub)
-        else true
+        else if (l.head != sub.head && !sub.tail.isEmpty) hasSubsequence(l.tail, sub)
+        else if (l.head == sub.head && sub.tail.isEmpty) true
+        else false
     }
 
     def main(args: Array[String]): Unit = {
