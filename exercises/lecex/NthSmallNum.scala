@@ -1,10 +1,18 @@
 object NthSmallNum {
     def nSmallest(l: List[Int], n: Int): Int = {
-        1
+        def go(l: List[Int], n: Int, smallest: Int): Int = {
+            if (l.tail.isEmpty) smallest
+            else if (l.head < smallest) go(l.tail, n, l.head)
+            else go(l.tail, n, smallest)
+        }
+
+        if (l.isEmpty) 0
+        else if (l.tail.isEmpty) l.head
+        else go(l.tail, n, l.head)
     }
 
     def formatNSmallest(l: List[Int], n: Int) = {
-        val msg = "The %d smallest number in %s is %d"
+        val msg = "The %dth smallest number in %s is %d"
         msg.format(n, l, nSmallest(l, n))
     }
 
