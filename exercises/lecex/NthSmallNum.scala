@@ -20,7 +20,7 @@ object NthSmallNum {
 
     def sort(l: List[Int]): List[Int] = {
         def go(l: List[Int], newL: List[Int]): List[Int] = {
-            
+            l
         }
 
         go(l, List[Int]())
