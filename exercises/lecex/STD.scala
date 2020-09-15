@@ -1,12 +1,9 @@
 object STD {
     def std(l: List[Int]): Double = {
-        val meanVal = mean(l) // Could call the function each recursive call, but where is the optimality in that...?
+        val meanVal = mean(l)
+        // Could call the function each recursive call, but where is the optimality in that...?
         def go(l: List[Int], total: Double, nums: Int): Double = {
-            if (l.tail.isEmpty) {
-                println(math.sqrt(total + l.head))
-                println(nums.toDouble)
-                math.sqrt(total + l.head) / (nums).toDouble
-            }
+            if (l.tail.isEmpty) math.sqrt((total + math.pow(l.head - meanVal, 2)) / (nums + 1))
             else go(l.tail, total + math.pow(l.head - meanVal, 2), nums + 1)
         }
 
