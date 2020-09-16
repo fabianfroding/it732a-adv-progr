@@ -1,18 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\STD.scala:6:29: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : total.type (with underlying type Int)[0m
-[0m[[0m[31merror[0m] [0m[0m required: ?{def +(x$1: ? >: Double): ?}[0m
-[0m[[0m[31merror[0m] [0m[0mNote that implicit conversions are not applicable because they are ambiguous:[0m
-[0m[[0m[31merror[0m] [0m[0m both method int2long in object Int of type (x: Int)Long[0m
-[0m[[0m[31merror[0m] [0m[0m and method int2float in object Int of type (x: Int)Float[0m
-[0m[[0m[31merror[0m] [0m[0m are possible conversion functions from total.type to ?{def +(x$1: ? >: Double): ?}[0m
-[0m[[0m[31merror[0m] [0m[0m            else go(l.tail, total + math.pow(l.head - meanVal, 2), nums + 1)[0m
-[0m[[0m[31merror[0m] [0m[0m                            ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\STD.scala:6:35: overloaded method value + with alternatives:[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Int)Int <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Char)Int <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Short)Int <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (x: Byte)Int[0m
-[0m[[0m[31merror[0m] [0m[0m cannot be applied to (Double)[0m
-[0m[[0m[31merror[0m] [0m[0m            else go(l.tail, total + math.pow(l.head - meanVal, 2), nums + 1)[0m
-[0m[[0m[31merror[0m] [0m[0m                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\3.1Count.scala:7:10: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m required: Int[0m
+[0m[[0m[31merror[0m] [0m[0m        f(l.head)[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
