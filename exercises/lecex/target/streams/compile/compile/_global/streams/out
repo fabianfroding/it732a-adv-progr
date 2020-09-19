@@ -1,6 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\3.3Sorted.scala:4:13: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Unit[0m
-[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
-[0m[[0m[31merror[0m] [0m[0m            if (!l.tail.isEmpty) {[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\exercises\lecex\3.8MergeReduce.scala:10:47: value +: is not a member of Int[0m
+[0m[[0m[31merror[0m] [0m[0m                go(a.tail, b.tail, merge, res +: merge(a.head, b.head))[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
