@@ -1,0 +1,15 @@
+run
+MyModule.abs(42)
+MyModule.abs(42);
+import MyModule.abs
+import MyModule.abs;
+run
+sbt run
+run
+sbt run
+sbt run;
+quit
+run
+compile
+run
+notepad IsSorted.scala
