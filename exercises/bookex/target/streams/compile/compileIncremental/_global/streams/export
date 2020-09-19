@@ -1,1 +1,0 @@
-scalac -bootclasspath C:\Users\Fabian\.sbt\boot\scala-2.12.10\lib\scala-library.jar -classpath C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\target\scala-2.12\classes C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\MyModule.scala
