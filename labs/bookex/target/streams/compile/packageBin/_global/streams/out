@@ -1,11 +1,19 @@
-[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\target\scala-2.12\exercises_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\bookex_2.12-0.1.0-SNAPSHOT.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Curry$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\Curry$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Curry.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\Curry.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Fibonacci$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\target\scala-2.12\classes\Fibonacci$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\Fibonacci$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Fibonacci.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\target\scala-2.12\classes\Fibonacci.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\Fibonacci.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IsSorted$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\IsSorted$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IsSorted.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\IsSorted.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	MyModule$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\target\scala-2.12\classes\MyModule$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\MyModule$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	MyModule.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\IT732A(AdvancedProgramming)\exercises\target\scala-2.12\classes\MyModule.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\labs\bookex\target\scala-2.12\classes\MyModule.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

@@ -163,7 +163,19 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   /**
   * Does only the merge part of exercise 3.8.
   */
-  def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = ???
+  def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = {
+    def go(ns: Lista[B], f: (B, B) => B, l: Lista[B], res: Lista[B]): Lista[B] = {
+      // Assume equal length
+      if (!l.tail.isEmpty && !ns.tail.isEmpty) {
+        go(l.tail, ns.tail, f, res :+ f(l.head, ns.head))
+      }
+      else {
+        res :+ f(l.head, ns.head)
+      }
+    }
+
+    go(ns, f, this, Lista[B]())
+  }
 
   /**
   * Returns a new list without the first 'n' elements.
@@ -173,7 +185,18 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   /**
   * Returns a new list with the first 'n' elements.
   */
-  def take(n: Int): Lista[A] = ???
+  def take(n: Int): Lista[A] = {
+    def go(n: Int, l: Lista[A], res: Lista[A]): Lista[A] = {
+      if (n > 0) {
+        go(n - 1, l.tail, res :+ l.head)
+      }
+      else {
+        res
+      }
+    }
+
+    go(n, this, Lista[A]())
+  }
 }
 
 
