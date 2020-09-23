@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Main.scala:4:34: not found: type B[0m
+[0m[[0m[31merror[0m] [0m[0m    def test(l: Lista[B]): Lista[B] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Main.scala:4:23: not found: type B[0m
+[0m[[0m[31merror[0m] [0m[0m    def test(l: Lista[B]): Lista[B] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

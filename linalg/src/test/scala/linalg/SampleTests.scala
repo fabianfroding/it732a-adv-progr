@@ -127,12 +127,4 @@ class SampleTests extends AnyFlatSpec {
   "v2 dot v3" should "be equal to 12" in {
     assert((v2 dot v3) == 12)
   }
-
-
-
-  info("======= Custom tests ======")
-
-  "merge should be " should " true" in {
-    assert((1) == 1)
-  }
 }

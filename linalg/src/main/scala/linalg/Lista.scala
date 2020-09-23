@@ -105,17 +105,26 @@ case object Emp extends Lista[Nothing] {
 
   def map[B](f: Nothing => B): Lista[B] = Emp
 
-  def merge[B>:Nothing](ns: Lista[B], f: (B, B) => B): Lista[B] = Emp
+  def reduce[B>:Nothing](f: (B, B) => B): B = throw new Exception("Reduce on empty list")
 
   def zip[B](ns: Lista[B]): Lista[(Nothing, B)] = Emp
 
-  def drop(n: Int): Lista[Nothing] = Emp
 
-  def take(n: Int): Lista[Nothing] = Emp
 
-  def forall(f: Nothing => Boolean): Boolean = true
+  // =================================================================
+  // ===================== Your working area =========================
+  /**
+  * These for methods are the only ones you'll need to implement in this class.
+  */
 
-  def reduce[B>:Nothing](f: (B, B) => B): B = throw new Exception("Reduce on empty list")
+  def forall(f: Nothing => Boolean): Boolean = ???
+
+  def merge[B>:Nothing](ns: Lista[B], f: (B, B) => B): Lista[B] = ???
+
+  def drop(n: Int): Lista[Nothing] = ???
+
+  def take(n: Int): Lista[Nothing] = ???
+
 }
 
 
@@ -158,19 +167,18 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   /**
   * Checks whether a condition holds for all elements.
   */
-  def forall(f: A => Boolean): Boolean = f(head) && tail.forall(f)
+  def forall(f: A => Boolean): Boolean = ???
 
   /**
   * Does only the merge part of exercise 3.8.
   */
   def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = {
     def go(ns: Lista[B], f: (B, B) => B, l: Lista[B], res: Lista[B]): Lista[B] = {
-      // Assume equal length
-      if (!l.tail.isEmpty && !ns.tail.isEmpty) {
-        go(l.tail, ns.tail, f, res :+ f(l.head, ns.head))
+      if (l.tail.size > 0 && ns.tail.size > 0) {
+        go(l.tail, f, ns.tail, Cons(f(l.head, ns.head), res))
       }
       else {
-        res :+ f(l.head, ns.head)
+        Cons(f(l.head, ns.head), res)
       }
     }
 
@@ -185,18 +193,7 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   /**
   * Returns a new list with the first 'n' elements.
   */
-  def take(n: Int): Lista[A] = {
-    def go(n: Int, l: Lista[A], res: Lista[A]): Lista[A] = {
-      if (n > 0) {
-        go(n - 1, l.tail, res :+ l.head)
-      }
-      else {
-        res
-      }
-    }
-
-    go(n, this, Lista[A]())
-  }
+  def take(n: Int): Lista[A] = ???
 }
 
 

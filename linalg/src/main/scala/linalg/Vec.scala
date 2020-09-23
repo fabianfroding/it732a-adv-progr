@@ -58,9 +58,10 @@ class Vec(val data: Lista[Double]) {
   def apply(i: Int): Double = ???
 
   /**
-  * Returns the ith element.
+  * Returns the elements between the given range (including the boundaries).
   *
-  * @param i index in the vector (0-indexed).
+  * @param range a range collection stating the beginning and ending of the selection.
+  *     See https://www.scala-lang.org/api/current/scala/collection/immutable/Range.html
   * @return the ith element in the vector.
   */
   def apply(range: Range): Vec = ???

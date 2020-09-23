@@ -1,26 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:169:19: value isEmpty is not a member of linalg.Lista[B][0m
-[0m[[0m[31merror[0m] [0m[0m      if (!l.tail.isEmpty && !ns.tail.isEmpty) {[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:169:39: value isEmpty is not a member of linalg.Lista[B][0m
-[0m[[0m[31merror[0m] [0m[0m      if (!l.tail.isEmpty && !ns.tail.isEmpty) {[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:179:39: too many arguments (found 4, expected 3) for method go: (ns: linalg.Lista[B], f: (B, B) => B, res: linalg.Lista[B]): linalg.Lista[B][0m
+[0m[[0m[31merror[0m] [0m[0m        go(this.tail, f, ns.tail, Cons(f(this.head, ns.head), res))[0m
 [0m[[0m[31merror[0m] [0m[0m                                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:170:23: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : linalg.Lista[B][0m
-[0m[[0m[31merror[0m] [0m[0m required: (B, B) => B[0m
-[0m[[0m[31merror[0m] [0m[0m        go(l.tail, ns.tail, f, res :+ f(l.head, ns.head))[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:170:29: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : (B, B) => B[0m
-[0m[[0m[31merror[0m] [0m[0m required: linalg.Lista[B][0m
-[0m[[0m[31merror[0m] [0m[0m        go(l.tail, ns.tail, f, res :+ f(l.head, ns.head))[0m
-[0m[[0m[31merror[0m] [0m[0m                            ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:170:36: value :+ is not a member of linalg.Lista[B][0m
-[0m[[0m[31merror[0m] [0m[0m        go(l.tail, ns.tail, f, res :+ f(l.head, ns.head))[0m
-[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:173:13: value :+ is not a member of linalg.Lista[B][0m
-[0m[[0m[31merror[0m] [0m[0m        res :+ f(l.head, ns.head)[0m
-[0m[[0m[31merror[0m] [0m[0m            ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Lista.scala:191:31: value :+ is not a member of linalg.Lista[A][0m
-[0m[[0m[31merror[0m] [0m[0m        go(n - 1, l.tail, res :+ l.head)[0m
-[0m[[0m[31merror[0m] [0m[0m                              ^[0m
-[0m[[0m[31merror[0m] [0m[0m7 errors found[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
