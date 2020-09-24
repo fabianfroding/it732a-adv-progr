@@ -91,6 +91,8 @@ sealed trait Lista[+A] {
     val str = map(_.toString).reduce((a, b) => { s"$a, $b" })
     s"[$str]"
   }
+
+  /* ===== Custom functions. ===== */
 }
 
 /**
@@ -117,14 +119,15 @@ case object Emp extends Lista[Nothing] {
   * These for methods are the only ones you'll need to implement in this class.
   */
 
-  def forall(f: Nothing => Boolean): Boolean = ???
+  def forall(f: Nothing => Boolean): Boolean = true
 
-  def merge[B>:Nothing](ns: Lista[B], f: (B, B) => B): Lista[B] = ???
+  def merge[B>:Nothing](ns: Lista[B], f: (B, B) => B): Lista[B] = Emp
 
-  def drop(n: Int): Lista[Nothing] = ???
+  def drop(n: Int): Lista[Nothing] = Emp
 
-  def take(n: Int): Lista[Nothing] = ???
+  def take(n: Int): Lista[Nothing] = Emp
 
+  /* ===== Custom functions. ===== */
 }
 
 
@@ -167,7 +170,7 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   /**
   * Checks whether a condition holds for all elements.
   */
-  def forall(f: A => Boolean): Boolean = ???
+  def forall(f: A => Boolean): Boolean = f(head) && tail.forall(f)
 
   /**
   * Does only the merge part of exercise 3.8.
@@ -175,7 +178,7 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = {
     def go(ns: Lista[B], f: (B, B) => B, l: Lista[B], res: Lista[B]): Lista[B] = {
       if (l.tail.size > 0 && ns.tail.size > 0) {
-        go(l.tail, f, ns.tail, Cons(f(l.head, ns.head), res))
+        go(l.tail, f, ns.tail, Cons(f(l.apply(l.tail.size-1), ns.apply(ns.tail.size-1)), res))
       }
       else {
         Cons(f(l.head, ns.head), res)
@@ -188,12 +191,39 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   /**
   * Returns a new list without the first 'n' elements.
   */
-  def drop(n: Int): Lista[A] = ???
+  def drop(n: Int): Lista[A] = {
+    def go(l: Lista[A], i: Int, res: Lista[A]): Lista[A] = {
+      if(l.tail.size > 0 && i >= n) {
+        go(l.tail, i + 1, Cons(l.head, res))
+      }
+      else if(l.tail.size > 0 && i < n) {
+        go(l.tail, i + 1, res)
+      }
+      else {
+        Cons(l.head, res)
+      }
+    }
+
+    go(this, 0, Lista[A]())
+  }
 
   /**
   * Returns a new list with the first 'n' elements.
   */
-  def take(n: Int): Lista[A] = ???
+  def take(n: Int): Lista[A] = {
+    def go(l: Lista[A], i: Int, res: Lista[A]): Lista[A] = {
+      if(l.tail.size > 0 && i < n) {
+        go(l.tail, i + 1, Cons(l.head, res))
+      }
+      else {
+        res
+      }
+    }
+
+    go(this, 0, Lista[A]())
+  }
+
+  /* ===== Custom functions. ===== */
 }
 
 

@@ -3,16 +3,21 @@ package linalg
 object Main {
 
     def main(args: Array[String]): Unit = {
-        println("Hey");
-        val a = Lista(1, 2, 3);
-        val b = Lista(4, 5, 6);
-        val c = Lista(9);
-        val d = Lista();
+        println("Test merge:");
+        val a = Lista(0, 1, 2, 3, 4, 5);
+        val b = Lista(4, 5, 6, 7, 8, 9);
+        println(a, b)
+        println(" => ");
+        println(a.merge(b, (x: Int, y: Int) => x * y));
 
-        val e = Cons(1, a);
+        println("Test drop(2):");
+        println(a);
+        println(" => ");
+        println(a.drop(2))
 
-        val ab = a.merge(b, (x: Int, y: Int) => x * y);
-
-        println(ab);
+        println("Test take(2):");
+        println(b);
+        println(" => ");
+        println(b.take(2))
     }
 }
