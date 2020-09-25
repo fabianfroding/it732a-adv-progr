@@ -1,8 +1,7 @@
 package linalg
 
 object Main {
-
-    def main(args: Array[String]): Unit = {
+    def testLista() = {
         println("Test merge:");
         val a = Lista(0, 1, 2, 3, 4, 5);
         val b = Lista(4, 5, 6, 7, 8, 9);
@@ -19,5 +18,9 @@ object Main {
         println(b);
         println(" => ");
         println(b.take(2))
+    }
+
+    def main(args: Array[String]): Unit = {
+        //testLista()
     }
 }

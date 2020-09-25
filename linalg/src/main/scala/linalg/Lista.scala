@@ -93,6 +93,7 @@ sealed trait Lista[+A] {
   }
 
   /* ===== Custom functions. ===== */
+  def reverse(): Lista[A]
 }
 
 /**
@@ -128,6 +129,7 @@ case object Emp extends Lista[Nothing] {
   def take(n: Int): Lista[Nothing] = Emp
 
   /* ===== Custom functions. ===== */
+  def reverse(): Lista[Nothing] = Emp
 }
 
 
@@ -178,10 +180,10 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = {
     def go(ns: Lista[B], f: (B, B) => B, l: Lista[B], res: Lista[B]): Lista[B] = {
       if (l.tail.size > 0 && ns.tail.size > 0) {
-        go(l.tail, f, ns.tail, Cons(f(l.apply(l.tail.size-1), ns.apply(ns.tail.size-1)), res))
+        go(l.tail, f, ns.tail, Cons(f(l.head, ns.head), res))
       }
       else {
-        Cons(f(l.head, ns.head), res)
+        Cons(f(l.head, ns.head), res).reverse()
       }
     }
 
@@ -200,7 +202,7 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
         go(l.tail, i + 1, res)
       }
       else {
-        Cons(l.head, res)
+        Cons(l.head, res).reverse()
       }
     }
 
@@ -216,7 +218,7 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
         go(l.tail, i + 1, Cons(l.head, res))
       }
       else {
-        res
+        res.reverse()
       }
     }
 
@@ -224,6 +226,14 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   }
 
   /* ===== Custom functions. ===== */
+  def reverse(): Lista[A] = {
+    def go(l: Lista[A], n: Int, res: Lista[A]): Lista[A] = {
+      if (n < 0) res
+      else (go(l, n-1, Cons(l.apply(l.size - 1 - n), res)))
+    }
+
+    go(this, this.size-1, Lista[A]())
+  }
 }
 
 
