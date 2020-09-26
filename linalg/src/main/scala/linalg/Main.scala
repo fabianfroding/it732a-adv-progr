@@ -20,7 +20,19 @@ object Main {
         println(b.take(2))
     }
 
+    def testVec() = {
+        val l = Lista(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+        val v = Vec(l)
+        println(v)
+
+        println(v.apply(2))
+
+        val r = 4 until 8
+        println(v.apply(r))
+    }
+
     def main(args: Array[String]): Unit = {
         //testLista()
+        testVec()
     }
 }

@@ -55,7 +55,19 @@ class Vec(val data: Lista[Double]) {
   * @param i index in the vector (0-indexed).
   * @return the ith element in the vector.
   */
-  def apply(i: Int): Double = ???
+  def apply(i: Int): Double = {
+    def go(l: Lista[Double], n: Int): Double = {
+      if (l.tail.size > 0) {
+        if (n == i) l.head
+        else go(l.tail, n + 1)
+      }
+      else {
+        l.head
+      }
+    }
+
+    go(this.data, 0)
+  }
 
   /**
   * Returns the elements between the given range (including the boundaries).
@@ -64,7 +76,24 @@ class Vec(val data: Lista[Double]) {
   *     See https://www.scala-lang.org/api/current/scala/collection/immutable/Range.html
   * @return the ith element in the vector.
   */
-  def apply(range: Range): Vec = ???
+  def apply(range: Range): Vec = {
+    def go(l: Lista[Double], n: Int, res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) {
+        if (n >= range.start && n <= range.end) {
+          go(l.tail, n + 1, Cons(l.head, res))
+        }
+        else {
+          go(l.tail, n + 1, res)
+        }
+      }
+      else {
+        Vec(Cons(l.head, res).reverse())
+      }
+      
+    }
+
+    go(this.data, 0, Lista[Double]())
+  }
 
 
 
