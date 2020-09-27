@@ -61,9 +61,7 @@ class Vec(val data: Lista[Double]) {
         if (n == i) l.head
         else go(l.tail, n + 1)
       }
-      else {
-        l.head
-      }
+      else l.head
     }
 
     go(this.data, 0)
@@ -79,17 +77,10 @@ class Vec(val data: Lista[Double]) {
   def apply(range: Range): Vec = {
     def go(l: Lista[Double], n: Int, res: Lista[Double]): Vec = {
       if (l.tail.size > 0) {
-        if (n >= range.start && n <= range.end) {
-          go(l.tail, n + 1, Cons(l.head, res))
-        }
-        else {
-          go(l.tail, n + 1, res)
-        }
+        if (n >= range.start && n <= range.end) go(l.tail, n + 1, Cons(l.head, res))
+        else go(l.tail, n + 1, res)
       }
-      else {
-        Vec(Cons(l.head, res).reverse())
-      }
-      
+      else Vec(Cons(l.head, res).reverse())
     }
 
     go(this.data, 0, Lista[Double]())
@@ -125,19 +116,49 @@ class Vec(val data: Lista[Double]) {
   * - Take into account that subtraction and division are non-associative! (v - m != m - v).
   */
 
-  def +(x: Double): Vec = ???
-  def +(x: Vec): Vec = ???
+  def +(x: Double): Vec = {
+    def go(l: Lista[Double], res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) go(l.tail, Cons(l.head + x, res))
+      else Vec(Cons(l.head + x, res).reverse)
+    }
+    go(this.data, Lista[Double]())
+  }
+  def +(x: Vec): Vec = {
+    def go(l: Lista[Double], x: Lista[Double], res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) go(l.tail, x.tail, Cons(l.head + x.head, res))
+      else Vec(Cons(l.head + x.head, res).reverse)
+    }
+    go(this.data, x.data, Lista[Double]())
+  }
   def +(x: Mat): Mat = ???
 
-  def *(x: Double): Vec = ???
+  def *(x: Double): Vec = {
+    def go(l: Lista[Double], res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) go(l.tail, Cons(l.head * x, res))
+      else Vec(Cons(l.head * x, res).reverse)
+    }
+    go(this.data, Lista[Double]())
+  }
   def *(x: Vec): Vec = ???
   def *(x: Mat): Mat = ???
 
-  def -(x: Double): Vec = ???
+  def -(x: Double): Vec = {
+    def go(l: Lista[Double], res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) go(l.tail, Cons(l.head - x, res))
+      else Vec(Cons(l.head - x, res).reverse)
+    }
+    go(this.data, Lista[Double]())
+  }
   def -(x: Vec): Vec = ???
   def -(x: Mat): Mat = ???
 
-  def /(x: Double): Vec = ???
+  def /(x: Double): Vec = {
+    def go(l: Lista[Double], res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) go(l.tail, Cons(l.head / x, res))
+      else Vec(Cons(l.head / x, res).reverse)
+    }
+    go(this.data, Lista[Double]())
+  }
   def /(x: Vec): Vec = ???
   def /(x: Mat): Mat = ???
 
@@ -145,7 +166,14 @@ class Vec(val data: Lista[Double]) {
   /**
   * Sums all elements in the vector.
   */
-  def sum: Double = ???
+  def sum: Double = {
+    def go(l: Lista[Double], res: Double): Double = {
+      if (l.tail.size > 0) go(l.tail, l.head + res)
+      else l.head + res
+    }
+
+    go(this.data, 0)
+  }
 
 
   // ------- Dot product / Matrix multiplication -------
@@ -153,7 +181,14 @@ class Vec(val data: Lista[Double]) {
   /**
   * Performs dot product (see exercise 2.11).
   */
-  def dot(vec: Vec): Double = ???
+  def dot(vec: Vec): Double = {
+    def go(a: Lista[Double], b: Lista[Double], res: Double): Double = {
+      if (a.tail.size > 0 && b.tail.size > 0) go(a.tail, b.tail, res + (a.head * b.head))
+      else res + (a.head * b.head)
+    }
+
+    go(this.data, vec.data, 0)
+  }
 
   /**
   * Performs a row-wise dot product (see exercise 2.11).

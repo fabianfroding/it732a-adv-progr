@@ -93,6 +93,10 @@ sealed trait Lista[+A] {
   }
 
   /* ===== Custom functions. ===== */
+  // Failed to implement an append function,
+  // so I used reverse in combination with prepend to solve the tasks.
+  // Probably not the most optimal approach in terms of complexity,
+  // but it works for the purpose of this assignment.
   def reverse(): Lista[A]
 }
 
@@ -179,12 +183,8 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   */
   def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = {
     def go(ns: Lista[B], f: (B, B) => B, l: Lista[B], res: Lista[B]): Lista[B] = {
-      if (l.tail.size > 0 && ns.tail.size > 0) {
-        go(l.tail, f, ns.tail, Cons(f(l.head, ns.head), res))
-      }
-      else {
-        Cons(f(l.head, ns.head), res).reverse()
-      }
+      if (l.tail.size > 0 && ns.tail.size > 0) go(l.tail, f, ns.tail, Cons(f(l.head, ns.head), res))
+      else Cons(f(l.head, ns.head), res).reverse()
     }
 
     go(ns, f, this, Lista[B]())
@@ -195,15 +195,9 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   */
   def drop(n: Int): Lista[A] = {
     def go(l: Lista[A], i: Int, res: Lista[A]): Lista[A] = {
-      if(l.tail.size > 0 && i >= n) {
-        go(l.tail, i + 1, Cons(l.head, res))
-      }
-      else if(l.tail.size > 0 && i < n) {
-        go(l.tail, i + 1, res)
-      }
-      else {
-        Cons(l.head, res).reverse()
-      }
+      if(l.tail.size > 0 && i >= n) go(l.tail, i + 1, Cons(l.head, res))
+      else if(l.tail.size > 0 && i < n) go(l.tail, i + 1, res)
+      else Cons(l.head, res).reverse()
     }
 
     go(this, 0, Lista[A]())
@@ -214,12 +208,8 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   */
   def take(n: Int): Lista[A] = {
     def go(l: Lista[A], i: Int, res: Lista[A]): Lista[A] = {
-      if(l.tail.size > 0 && i < n) {
-        go(l.tail, i + 1, Cons(l.head, res))
-      }
-      else {
-        res.reverse()
-      }
+      if(l.tail.size > 0 && i < n) go(l.tail, i + 1, Cons(l.head, res))
+      else res.reverse()
     }
 
     go(this, 0, Lista[A]())

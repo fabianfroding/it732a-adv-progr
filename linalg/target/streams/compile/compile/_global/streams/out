@@ -1,4 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Vec.scala:89:43: too many arguments (found 5, expected 3) for method go: (l: linalg.Lista[Double], n: Int, res: linalg.Lista[Double]): linalg.Vec[0m
-[0m[[0m[31merror[0m] [0m[0m    go(this.data, range.start, range.end, 0, Lista[Double]())[0m
-[0m[[0m[31merror[0m] [0m[0m                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0m5 deprecations (since 2.13.3); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

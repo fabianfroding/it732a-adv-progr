@@ -1,5 +1,7 @@
 package linalg
 
+// This class is just for testing.
+
 object Main {
     def testLista() = {
         println("Test merge:");
@@ -29,6 +31,13 @@ object Main {
 
         val r = 4 until 8
         println(v.apply(r))
+
+        println(v.sum)
+
+        val v2 = Vec(Lista(1.0, 2.0, 3.0))
+        println(v2.dot(Vec(Lista(4.0, 5.0, 6.0))))
+
+        println(v2 + v2)
     }
 
     def main(args: Array[String]): Unit = {
