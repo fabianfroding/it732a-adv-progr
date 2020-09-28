@@ -63,7 +63,20 @@ class Mat(val data: Lista[Vec]) {
   *
   * @return a vector corresponding to the selected row or column.
   */
-  def apply(i: Int, axis: Int): Vec = ???
+  def apply(i: Int, axis: Int): Vec = {
+    def go(l: Lista[Vec], n: Int): Vec = {
+      if (l.tail.size > 0) {
+        if (n == i) l.head
+        else go(l.tail, n + 1)
+      }
+      else l.head
+    }
+
+    def loop()
+
+    if (axis == 0) go(this.data, 0)
+    else go(this.data, 0) // Go to the ith element of each list and return a new list of all the ith elements
+  }
 
   /**
   * Returns the rows (if axis == 0), or columns (if axis == 1), between the given
@@ -136,7 +149,7 @@ class Mat(val data: Lista[Vec]) {
   /**
   * Performs a row-wise dot product (see exercise 2.11).
   */
-  def dot(vec: Vec): Vec = ???
+  def dot(vec: Vec): Mat = ???
 
   /**
   * Performs a matrix mutiplication (see exercise 6.7)

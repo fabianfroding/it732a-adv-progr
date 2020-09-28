@@ -139,7 +139,14 @@ class Vec(val data: Lista[Double]) {
     }
     go(this.data, Lista[Double]())
   }
-  def *(x: Vec): Vec = ???
+  def *(x: Vec): Vec = {
+    def go(a: Lista[Double], b: Lista[Double], res: Lista[Double]): Vec = {
+      if (a.tail.size > 0 && b.tail.size > 0) go(a.tail, b.tail, Cons(a.head * b.head, res))
+      else Vec(Cons(a.head * b.head, res).reverse)
+    }
+
+    go(this.data, x.data, Lista[Double]())
+  }
   def *(x: Mat): Mat = ???
 
   def -(x: Double): Vec = {
@@ -149,7 +156,14 @@ class Vec(val data: Lista[Double]) {
     }
     go(this.data, Lista[Double]())
   }
-  def -(x: Vec): Vec = ???
+  def -(x: Vec): Vec = {
+    def go(a: Lista[Double], b: Lista[Double], res: Lista[Double]): Vec = {
+      if (a.tail.size > 0 && b.tail.size > 0) go(a.tail, b.tail, Cons(a.head - b.head, res))
+      else Vec(Cons(a.head - b.head, res).reverse)
+    }
+
+    go(this.data, x.data, Lista[Double]())
+  }
   def -(x: Mat): Mat = ???
 
   def /(x: Double): Vec = {
@@ -159,7 +173,14 @@ class Vec(val data: Lista[Double]) {
     }
     go(this.data, Lista[Double]())
   }
-  def /(x: Vec): Vec = ???
+  def /(x: Vec): Vec = {
+    def go(a: Lista[Double], b: Lista[Double], res: Lista[Double]): Vec = {
+      if (a.tail.size > 0 && b.tail.size > 0) go(a.tail, b.tail, Cons(a.head / b.head, res))
+      else Vec(Cons(a.head / b.head, res).reverse)
+    }
+
+    go(this.data, x.data, Lista[Double]())
+  }
   def /(x: Mat): Mat = ???
 
 
