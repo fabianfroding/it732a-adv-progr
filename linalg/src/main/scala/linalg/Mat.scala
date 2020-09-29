@@ -64,25 +64,43 @@ class Mat(val data: Lista[Vec]) {
   * @return a vector corresponding to the selected row or column.
   */
   def apply(i: Int, axis: Int): Vec = {
-    def go(l: Lista[Vec], n: Int): Vec = {
+    def getRow(l: Lista[Vec], n: Int): Vec = {
       if (l.tail.size > 0) {
         if (n == i) l.head
-        else go(l.tail, n + 1)
+        else getRow(l.tail, n + 1)
       }
       else l.head
     }
 
-    def loop()
+    def getColumn(l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (l.tail.size > 0) getColumn(l.tail, Cons(l.head.apply(i), res))
+      else Vec(Cons(l.head.apply(i), res).reverse)
+    }
 
-    if (axis == 0) go(this.data, 0)
-    else go(this.data, 0) // Go to the ith element of each list and return a new list of all the ith elements
+    if (axis == 0) getRow(this.data, 0)
+    else if (axis == 1) getColumn(this.data, Lista[Double]())
+    else throw new Exception("Undefined axis")
   }
 
   /**
   * Returns the rows (if axis == 0), or columns (if axis == 1), between the given
   * range (inclusive). Check the scala API for Range.
   */
-  def apply(range: Range, axis: Int): Mat = ???
+  def apply(range: Range, axis: Int): Mat = {
+    def getRows(mat: Mat, i: Int, res: Lista[Vec]): Mat = {
+      if (mat.data.tail.size > 0) {
+        if (i >= range.start && i <= range.end) {
+          println(mat.data.apply(i))
+          getRows(mat, i + 1, res)
+        }
+      }
+      return mat
+    }
+
+    if (axis == 0) getRows(this, 0, Lista[Vec]())
+    else if (axis == 1) getRows(this, 0, Lista[Vec]())
+    else throw new Exception("Undefined axis")
+  }
 
 
 

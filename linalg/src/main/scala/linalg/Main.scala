@@ -44,8 +44,11 @@ object Main {
     }
 
     def testMat() = {
-        val mat = Mat(Lista(Vec(1,2,3), Vec(4,5,6)))
-        println(println(mat.apply(1, 0)))
+        val mat = Mat(Lista(Vec(1,2,3,4,5), Vec(6,7,8,9,10), Vec(11,12,13,14,15)))
+        //println(mat.apply(0, 1))
+
+        //println(mat.apply(0 until 1, 0))
+        mat.apply(0 until 1, 0)
     }
 
     def main(args: Array[String]): Unit = {

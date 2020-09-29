@@ -1,7 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Fabian\Studier\DSCMA\AdvancedProgramming_IT732A\linalg\src\main\scala\linalg\Main.scala:48:29: overloaded method apply with alternatives:[0m
-[0m[[0m[31merror[0m] [0m[0m  (range: Range,axis: Int)linalg.Mat <and>[0m
-[0m[[0m[31merror[0m] [0m[0m  (i: Int,axis: Int)linalg.Vec[0m
-[0m[[0m[31merror[0m] [0m[0m cannot be applied to (Int)[0m
-[0m[[0m[31merror[0m] [0m[0m        println(println(mat.apply(1)))[0m
-[0m[[0m[31merror[0m] [0m[0m                            ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0m1 deprecation (since 2.13.3); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
