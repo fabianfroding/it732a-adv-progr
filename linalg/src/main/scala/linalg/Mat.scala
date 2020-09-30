@@ -87,18 +87,23 @@ class Mat(val data: Lista[Vec]) {
   * range (inclusive). Check the scala API for Range.
   */
   def apply(range: Range, axis: Int): Mat = {
-    def getRows(mat: Mat, i: Int, res: Lista[Vec]): Mat = {
-      if (mat.data.tail.size > 0) {
-        if (i >= range.start && i <= range.end) {
-          println(mat.data.apply(i))
-          getRows(mat, i + 1, res)
-        }
+    def getRows(l: Lista[Vec], i: Int, res: Lista[Vec]): Mat = {
+      if (range.start < 0 || range.end > l.size-1) throw new Exception("Range out of bounds")
+      if (i <= range.end) {
+        getRows(l, i + 1, Cons(l.apply(i), res))
       }
-      return mat
+      else {
+        Mat(res.reverse)
+      }
     }
 
-    if (axis == 0) getRows(this, 0, Lista[Vec]())
-    else if (axis == 1) getRows(this, 0, Lista[Vec]())
+    // TODO: getColumns
+    def getColumns(l: Lista[Vec], i: Int, res: Lista[Vec]): Mat = {
+      
+    }
+
+    if (axis == 0) getRows(this.data, range.start, Lista[Vec]())
+    else if (axis == 1) getRows(this.data, range.start, Lista[Vec]())
     else throw new Exception("Undefined axis")
   }
 
