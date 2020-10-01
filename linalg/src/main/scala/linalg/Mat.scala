@@ -88,7 +88,10 @@ class Mat(val data: Lista[Vec]) {
   */
   def apply(range: Range, axis: Int): Mat = {
     def getRows(l: Lista[Vec], i: Int, res: Lista[Vec]): Mat = {
-      if (range.start < 0 || range.end > l.size-1) throw new Exception("Range out of bounds")
+      if (range.start < 0 || range.end > l.size-1) {
+        throw new Exception("Range out of bounds")
+        Mat(res.reverse)
+      }
       if (i <= range.end) {
         getRows(l, i + 1, Cons(l.apply(i), res))
       }
@@ -98,9 +101,7 @@ class Mat(val data: Lista[Vec]) {
     }
 
     // TODO: getColumns
-    def getColumns(l: Lista[Vec], i: Int, res: Lista[Vec]): Mat = {
-      
-    }
+    def getColumns(l: Lista[Vec], i: Int, res: Lista[Vec]): Mat = ???
 
     if (axis == 0) getRows(this.data, range.start, Lista[Vec]())
     else if (axis == 1) getRows(this.data, range.start, Lista[Vec]())

@@ -130,7 +130,39 @@ class Vec(val data: Lista[Double]) {
     }
     go(this.data, x.data, Lista[Double]())
   }
-  def +(x: Mat): Mat = ???
+  def +(x: Mat): Mat = {
+    println("mat+")
+    /*for (w <- 0 until this.data.size) {
+      //println(this.data.apply(w))
+      for (m <- 0 until x.data.size) {
+        println(x.data.apply(m).apply(w))
+      }
+    }*/
+
+    def go(l: Lista[Double], i: Int, res: Lista[Vec]): Mat = {
+      def inner(l2: Lista[Double], ml: Lista[Vec], i: Int, j: Int, res2: Lista[Double]): Vec = {
+        if(ml.tail.size > 0) {
+          println(ml.apply(j).apply(i))
+          inner(l2, ml.tail, i, j+1, Cons(ml.apply(j).apply(i), res2))
+        }
+        else {
+          println(ml.apply(0).apply(i)) // Nära!
+          Vec(res2)
+        }
+      }
+
+      if (l.tail.size > 0) {
+        go(l.tail, i + 1, Cons(inner(l, x.data, i, 0, Lista[Double]()), res))
+      }
+      else {
+        x
+      }
+    }
+
+    go(this.data, 0, Lista[Vec]())
+
+    x
+  }
 
   def *(x: Double): Vec = {
     def go(l: Lista[Double], res: Lista[Double]): Vec = {
