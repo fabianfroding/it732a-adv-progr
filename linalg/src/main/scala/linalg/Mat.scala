@@ -302,7 +302,14 @@ class Mat(val data: Lista[Vec]) {
   /**
   * Sums each element in the matrix.
   */
-  def sum: Double = ???
+  def sum: Double = {
+    def go(i: Int, l: Lista[Vec], res: Double): Double = {
+      if (i < this.data.size) go(i + 1, l, l.apply(i).sum + res)
+      else res
+    }
+
+    go(0, this.data, 0.0)
+  }
 
 
   // ------- Transposing -------
@@ -318,7 +325,27 @@ class Mat(val data: Lista[Vec]) {
   /**
   * Performs a row-wise dot product (see exercise 2.11).
   */
-  def dot(vec: Vec): Mat = ???
+  def dot(vec: Vec): Mat = {
+    def goInner(i: Int, v: Vec, res: Lista[Double]): Vec = {
+      if (i < v.size) {
+        //println(vec)
+        //println(v.apply(i) * vec.apply(i))
+        goInner(i + 1, v, Cons(v.apply(i) * vec.apply(i), res))
+      }
+      else Vec(res.reverse)
+    }
+
+    //For each vector in this, call the .dot in vec and add it to res
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < l.size) {
+        //println(l.apply(i))
+        go(i + 1, l, Cons(goInner(0, l.apply(i), Lista[Double]()), res))
+      }
+      else Mat(res.reverse)
+    }
+
+    go(0, this.data, Lista[Vec]())
+  }
 
   /**
   * Performs a matrix mutiplication (see exercise 6.7)
