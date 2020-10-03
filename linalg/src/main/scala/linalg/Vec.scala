@@ -263,7 +263,6 @@ class Vec(val data: Lista[Double]) {
   * Performs a row-wise dot product (see exercise 2.11).
   */
   def dot(m: Mat): Vec = {
-    // for each vec in m, run and cons dat(vec)
     def go(i: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
       if (i < l.size) go(i + 1, l, Cons(dot(l.apply(i)), res))
       else Vec(res.reverse)

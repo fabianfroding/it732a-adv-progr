@@ -92,19 +92,20 @@ class Mat(val data: Lista[Vec]) {
         throw new Exception("Range out of bounds")
         Mat(res.reverse)
       }
-      if (i <= range.end) {
-        getRows(l, i + 1, Cons(l.apply(i), res))
-      }
-      else {
-        Mat(res.reverse)
-      }
+      if (i <= range.end) getRows(l, i + 1, Cons(l.apply(i), res))
+      else Mat(res.reverse)
     }
 
-    // TODO: getColumns
-    def getColumns(l: Lista[Vec], i: Int, res: Lista[Vec]): Mat = ???
+    def getColumns(m: Mat, i: Int, res: Lista[Vec]): Mat = {
+      if (range.start < 0 || range.end > m.data.apply(0).size-1) {
+        throw new Exception("Range out of bounds")
+      }
+      if (i <= range.end) getColumns(m, i + 1, Cons(m.apply(i, 1), res))
+      else Mat(res.reverse)
+    }
 
     if (axis == 0) getRows(this.data, range.start, Lista[Vec]())
-    else if (axis == 1) getRows(this.data, range.start, Lista[Vec]())
+    else if (axis == 1) getColumns(this, range.start, Lista[Vec]())
     else throw new Exception("Undefined axis")
   }
 

@@ -58,12 +58,12 @@ object Main {
         //println(mat.apply(0, 1))
 
         //println(mat.apply(0 until 1, 0))
-        println(mat.apply(2 until 2, 0))
+        println(mat.apply(2 until 2, 1))
     }
 
     def main(args: Array[String]): Unit = {
         //testLista()
-        testVec()
-        //testMat()
+        //testVec()
+        testMat()
     }
 }
