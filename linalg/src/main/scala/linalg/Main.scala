@@ -58,7 +58,13 @@ object Main {
         //println(mat.apply(0, 1))
 
         //println(mat.apply(0 until 1, 0))
-        println(mat.apply(2 until 2, 1))
+        //println(mat.apply(2 until 2, 1))
+
+        //println(mat -100)
+        val vec = Vec(Lista(1.0,2.0,3.0,4.0,5.0))
+        //println(mat / vec)
+        val mat2 = Mat(Lista(Vec(1,2,3,4,5), Vec(6,7,8,9,10), Vec(11,12,13,14,15)))
+        println(mat / mat2)
     }
 
     def main(args: Array[String]): Unit = {

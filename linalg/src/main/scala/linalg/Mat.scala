@@ -139,20 +139,164 @@ class Mat(val data: Lista[Vec]) {
   * - Take into account that subtraction and division are non-associative! (v - m != m - v).
   */
 
-  def +(x: Double): Mat = ???
-  def *(x: Double): Mat = ???
-  def -(x: Double): Mat = ???
-  def /(x: Double): Mat = ???
+  def +(x: Double): Mat = {
+    def goInner(i: Int, j: Int, res: Lista[Double]): Vec = {
+      if (j < this.data.apply(i).size) goInner(i, j + 1, Cons(this.data.apply(i).apply(j) + x, res))
+      else Vec(res.reverse)
+    }
 
-  def +(x: Vec): Mat = ???
-  def *(x: Vec): Mat = ???
-  def -(x: Vec): Mat = ???
-  def /(x: Vec): Mat = ???
+    def go(i: Int, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, Cons(goInner(i, 0, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
 
-  def +(x: Mat): Mat = ???
-  def *(x: Mat): Mat = ???
-  def -(x: Mat): Mat = ???
-  def /(x: Mat): Mat = ???
+    go(0, Lista[Vec]())
+  }
+  def *(x: Double): Mat = {
+    def goInner(i: Int, j: Int, res: Lista[Double]): Vec = {
+      if (j < this.data.apply(i).size) goInner(i, j + 1, Cons(this.data.apply(i).apply(j) * x, res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, Cons(goInner(i, 0, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, Lista[Vec]())
+  }
+  def -(x: Double): Mat = {
+    def goInner(i: Int, j: Int, res: Lista[Double]): Vec = {
+      if (j < this.data.apply(i).size) goInner(i, j + 1, Cons(this.data.apply(i).apply(j) - x, res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, Cons(goInner(i, 0, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, Lista[Vec]())
+  }
+  def /(x: Double): Mat = {
+    def goInner(i: Int, j: Int, res: Lista[Double]): Vec = {
+      if (j < this.data.apply(i).size) goInner(i, j + 1, Cons(this.data.apply(i).apply(j) / x, res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, Cons(goInner(i, 0, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, Lista[Vec]())
+  }
+
+  def +(x: Vec): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Double], res: Lista[Double]): Vec = {
+      if (j < l.size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) + l.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, v: Vec, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, v, Cons(goInner(i, 0, v.data, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x, Lista[Vec]())
+  }
+  def *(x: Vec): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Double], res: Lista[Double]): Vec = {
+      if (j < l.size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) * l.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, v: Vec, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, v, Cons(goInner(i, 0, v.data, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x, Lista[Vec]())
+  }
+  def -(x: Vec): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Double], res: Lista[Double]): Vec = {
+      if (j < l.size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) - l.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, v: Vec, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, v, Cons(goInner(i, 0, v.data, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x, Lista[Vec]())
+  }
+  def /(x: Vec): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Double], res: Lista[Double]): Vec = {
+      if (j < l.size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) / l.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, v: Vec, res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, v, Cons(goInner(i, 0, v.data, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x, Lista[Vec]())
+  }
+
+  def +(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (j < l.apply(0).size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) + l.apply(i).apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, l, Cons(goInner(i, 0, l, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
+  def *(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (j < l.apply(0).size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) * l.apply(i).apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, l, Cons(goInner(i, 0, l, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
+  def -(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (j < l.apply(0).size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) - l.apply(i).apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, l, Cons(goInner(i, 0, l, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
+  def /(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (j < l.apply(0).size) goInner(i, j + 1, l, Cons(this.apply(i, 0).apply(j) / l.apply(i).apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < this.data.size) go(i + 1, l, Cons(goInner(i, 0, l, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
 
 
   /**
