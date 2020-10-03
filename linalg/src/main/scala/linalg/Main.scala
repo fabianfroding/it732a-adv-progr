@@ -44,9 +44,13 @@ object Main {
 
         val vecX = Vec(Lista(1.0,2.0,3.0,4.0))
         val mat = Mat(Lista(Vec(1.0,2.0,3.0,4.0), Vec(5.0,6.0,7.0,8.0), Vec(9.0,10.0,11.0,12.0)))
-        vecX + mat
+        
+        val vecS = Vec(Lista(2.0, 3.0))
+        val matS = Mat(Lista(Vec(1.0, 1.0), Vec(2.0, 2.0)))
 
-        println(vecX + mat)
+        println(vecS / matS)
+
+        println(vecX.dot(mat))
     }
 
     def testMat() = {

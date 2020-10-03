@@ -159,7 +159,19 @@ class Vec(val data: Lista[Double]) {
 
     go(this.data, x.data, Lista[Double]())
   }
-  def *(x: Mat): Mat = ???
+  def *(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, v: Vec, res: Lista[Double]): Vec = {
+      if (j < v.size) goInner(i, j + 1, v, Cons(this.apply(j) * v.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < l.size) go(i + 1, l, Cons(goInner(i, 0, l.apply(i), Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
 
   def -(x: Double): Vec = {
     def go(l: Lista[Double], res: Lista[Double]): Vec = {
@@ -176,7 +188,19 @@ class Vec(val data: Lista[Double]) {
 
     go(this.data, x.data, Lista[Double]())
   }
-  def -(x: Mat): Mat = ???
+  def -(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, v: Vec, res: Lista[Double]): Vec = {
+      if (j < v.size) goInner(i, j + 1, v, Cons(this.apply(j) - v.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < l.size) go(i + 1, l, Cons(goInner(i, 0, l.apply(i), Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
 
   def /(x: Double): Vec = {
     def go(l: Lista[Double], res: Lista[Double]): Vec = {
@@ -193,7 +217,19 @@ class Vec(val data: Lista[Double]) {
 
     go(this.data, x.data, Lista[Double]())
   }
-  def /(x: Mat): Mat = ???
+  def /(x: Mat): Mat = {
+    def goInner(i: Int, j: Int, v: Vec, res: Lista[Double]): Vec = {
+      if (j < v.size) goInner(i, j + 1, v, Cons(this.apply(j) / v.apply(j), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (i < l.size) go(i + 1, l, Cons(goInner(i, 0, l.apply(i), Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, x.data, Lista[Vec]())
+  }
 
 
   /**
@@ -226,7 +262,15 @@ class Vec(val data: Lista[Double]) {
   /**
   * Performs a row-wise dot product (see exercise 2.11).
   */
-  def dot(m: Mat): Vec = ???
+  def dot(m: Mat): Vec = {
+    // for each vec in m, run and cons dat(vec)
+    def go(i: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (i < l.size) go(i + 1, l, Cons(dot(l.apply(i)), res))
+      else Vec(res.reverse)
+    }
+
+    go(0, m.data, Lista[Double]())
+  }
 
 }
 
