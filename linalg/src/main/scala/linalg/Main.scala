@@ -82,9 +82,18 @@ object Main {
         println(mat01.dot(mat02))
     }
 
+    def testPackage() {
+        val vec = Vec(1.0,2.0,3.0)
+        //println(5/vec)
+        val mat = Mat(Vec(1,2,3), Vec(4,5,6), Vec(7,8,9))
+        //println(5-mat)
+        println(5/mat)
+    }
+
     def main(args: Array[String]): Unit = {
         //testLista()
         //testVec()
-        testMat()
+        //testMat()
+        testPackage()
     }
 }
