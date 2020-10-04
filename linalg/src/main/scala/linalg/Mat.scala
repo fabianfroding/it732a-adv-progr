@@ -317,7 +317,21 @@ class Mat(val data: Lista[Vec]) {
   /**
   * Transposes the matrix (see exercise 6.6).
   */
-  def t: Mat = ???
+  def t: Mat = {
+    // Take each element from column i and add it to new list.
+    // Return the new list and add that list to vec list.
+    def goInner(i: Int, j: Int, l: Lista[Vec], res: Lista[Double]): Vec = {
+      if (j < l.size) goInner(i, j + 1, l, Cons(l.apply(j).apply(i), res))
+      else Vec(res.reverse)
+    }
+
+    def go(i: Int, res: Lista[Vec]): Mat = {
+      if (i < this.data.apply(0).size) go(i + 1, Cons(goInner(i, 0, this.data, Lista[Double]()), res))
+      else Mat(res.reverse)
+    }
+
+    go(0, Lista[Vec]())
+  }
 
 
   // ------- Dot product / Matrix multiplication -------
