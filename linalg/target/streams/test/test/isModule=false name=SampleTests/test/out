@@ -1,0 +1,63 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSampleTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ======= Selecting and slicing ====== [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Vectors ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv3(0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv3(2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv3(1 to 2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(2, 3)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Matrices ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm3(1, 0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to v2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm3(2, 1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(1, 2, 3)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm3(0 to 1, 0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Mat(v1, v2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm3(1 to 2, 1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Mat([1, 1], [2, 2], [2, 3])[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ======= Arithmetic operations ====== [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Addition ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 + 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(2, 2, 2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m1 + v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(2, 2, 2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 + v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(2, 2, 2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 + v2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(3, 3, 3)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 + m1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to m2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm1 + v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to m2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm1 + m1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to m2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Multiplication ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv2 * 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(4, 4, 4)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m2 * v2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(4, 4, 4)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv2 * v2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to v4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv2 * m2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to m4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mm2 * m2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to m4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Substraction ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 - v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(0, 0, 0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv2 - v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(1, 1, 1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 - v2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(-1, -1, -1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Division ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv2 / v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(2, 2, 2)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 / v2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to Vec(.5, .5, .5)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ======= dot product ====== [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m+ ---- Vectors ---- [0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv1 dot v1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mv2 dot v3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should be equal to 12[0m[0m

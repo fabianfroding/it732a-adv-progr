@@ -101,7 +101,7 @@ class Mat(val data: Lista[Vec]) {
         throw new Exception("Range out of bounds")
       }
       if (i <= range.end) getColumns(m, i + 1, Cons(m.apply(i, 1), res))
-      else Mat(res.reverse)
+      else Mat(res.reverse).t
     }
 
     if (axis == 0) getRows(this.data, range.start, Lista[Vec]())

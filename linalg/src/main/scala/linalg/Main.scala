@@ -79,7 +79,11 @@ object Main {
         val mat01 = Mat(Vec(1,2,3,4), Vec(5,6,7,8))
         val mat02 = Mat(Vec(1,2,3), Vec(4,5,6), Vec(7,8,9), Vec(10,11,12))
 
-        println(mat01.dot(mat02))
+        //println(mat01.dot(mat02))
+
+        val m3: Mat = Mat(Vec(1, 1, 1), Vec(2, 2, 2), Vec(1, 2, 3))
+        m3(1 to 2, 1)
+        println(m3(1 to 2, 1)) // [1, 1], [2, 2], [2, 3]
     }
 
     def testPackage() {
@@ -93,7 +97,7 @@ object Main {
     def main(args: Array[String]): Unit = {
         //testLista()
         //testVec()
-        //testMat()
-        testPackage()
+        testMat()
+        //testPackage()
     }
 }
