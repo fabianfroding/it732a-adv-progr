@@ -356,7 +356,15 @@ class Mat(val data: Lista[Vec]) {
   /**
   * Performs a matrix mutiplication (see exercise 6.7)
   */
-  def dot(m: Mat): Mat = ???
+  def dot(m: Mat): Mat = {
+    def go(a: Lista[Vec], b: Lista[Vec], res: Lista[Vec]): Mat = {
+      if (a.tail.size > 0) go(a.tail, b, Cons(a.head.dot(Mat(b)), res))
+      if (b.tail.size > 0) go(a, b.tail, Cons(b.head.dot(Mat(a)), res))
+      else Mat(Cons(b.head.dot(Mat(a)), res).reverse).t
+    }
+
+    go(this.data, m.t.data, Lista[Vec]())
+  }
 
 }
 

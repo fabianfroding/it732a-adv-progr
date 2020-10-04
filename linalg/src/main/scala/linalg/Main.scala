@@ -73,8 +73,13 @@ object Main {
         val matE = Mat(Lista(Vec(1,2,3), Vec(4,5,6), Vec(7,8,9))) //[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         //println(matE.dot(vecE))
 
-        println(mat2)
-        println(mat2.t)
+        //println(mat2)
+        //println(mat2.t)
+
+        val mat01 = Mat(Vec(1,2,3,4), Vec(5,6,7,8))
+        val mat02 = Mat(Vec(1,2,3), Vec(4,5,6), Vec(7,8,9), Vec(10,11,12))
+
+        println(mat01.dot(mat02))
     }
 
     def main(args: Array[String]): Unit = {
