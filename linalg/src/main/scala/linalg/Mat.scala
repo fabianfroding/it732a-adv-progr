@@ -326,25 +326,17 @@ class Mat(val data: Lista[Vec]) {
   * Performs a row-wise dot product (see exercise 2.11).
   */
   def dot(vec: Vec): Mat = {
-    def goInner(i: Int, v: Vec, res: Lista[Double]): Vec = {
-      if (i < v.size) {
-        //println(vec)
-        //println(v.apply(i) * vec.apply(i))
-        goInner(i + 1, v, Cons(v.apply(i) * vec.apply(i), res))
-      }
-      else Vec(res.reverse)
+    def goInner(a: Lista[Double], b: Double, res: Double): Double = {
+      if (a.tail.size > 0) goInner(a.tail, b, res + (a.head * b))
+      else res + (a.head * b)
     }
 
-    //For each vector in this, call the .dot in vec and add it to res
-    def go(i: Int, l: Lista[Vec], res: Lista[Vec]): Mat = {
-      if (i < l.size) {
-        //println(l.apply(i))
-        go(i + 1, l, Cons(goInner(0, l.apply(i), Lista[Double]()), res))
-      }
-      else Mat(res.reverse)
+    def go(i: Int, res: Lista[Double]): Mat = {
+      if (i <= this.data.apply(0).size-1) go(i + 1, Cons(goInner(this.apply(i, 1).data, vec.data.apply(i), 0.0), res))
+      else Mat(Vec(res.reverse))
     }
 
-    go(0, this.data, Lista[Vec]())
+    go(0, Lista[Double]())
   }
 
   /**

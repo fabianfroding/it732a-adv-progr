@@ -68,6 +68,10 @@ object Main {
 
         //println(mat.sum)
         println(mat.dot(vec))
+
+        val vecE = Vec(Lista(1.0,1.0,1.0)) //[1, 1, 1]
+        val matE = Mat(Lista(Vec(1,2,3), Vec(4,5,6), Vec(7,8,9))) //[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        println(matE.dot(vecE))
     }
 
     def main(args: Array[String]): Unit = {
