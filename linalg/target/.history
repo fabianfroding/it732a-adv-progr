@@ -2,3 +2,12 @@ run
 test
 run
 test
+sbt clean
+clean
+run
+clean
+run
+test
+run
+test
+run

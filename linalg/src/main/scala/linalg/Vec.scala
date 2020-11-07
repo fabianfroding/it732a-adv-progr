@@ -80,7 +80,10 @@ class Vec(val data: Lista[Double]) {
         if (n >= range.start && n <= range.end) go(l.tail, n + 1, Cons(l.head, res))
         else go(l.tail, n + 1, res)
       }
-      else Vec(Cons(l.head, res).reverse())
+      else {
+        if (n >= range.start && n <= range.end) Vec(Cons(l.head, res).reverse())
+        else Vec(res.reverse())
+      }
     }
 
     go(this.data, 0, Lista[Double]())

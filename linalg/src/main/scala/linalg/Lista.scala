@@ -183,7 +183,7 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   */
   def merge[B>:A](ns: Lista[B], f: (B, B) => B): Lista[B] = {
     def go(ns: Lista[B], f: (B, B) => B, l: Lista[B], res: Lista[B]): Lista[B] = {
-      if (l.tail.size > 0 && ns.tail.size > 0) go(l.tail, f, ns.tail, Cons(f(l.head, ns.head), res))
+      if (l.tail.size > 0 && ns.tail.size > 0) go(ns.tail, f, l.tail, Cons(f(l.head, ns.head), res))
       else Cons(f(l.head, ns.head), res).reverse()
     }
 
@@ -195,12 +195,19 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
   */
   def drop(n: Int): Lista[A] = {
     def go(l: Lista[A], i: Int, res: Lista[A]): Lista[A] = {
-      if(l.tail.size > 0 && i >= n) go(l.tail, i + 1, Cons(l.head, res))
-      else if(l.tail.size > 0 && i < n) go(l.tail, i + 1, res)
-      else Cons(l.head, res).reverse()
+      if (l.tail.size > 0) {
+        println(l.head)
+        if(i >= n) go(l.tail, i + 1, Cons(l.head, res))
+        else go(l.tail, i + 1, res)
+      }
+      else {
+        println("head", l.head)
+        Cons(l.head, res).reverse()
+      } 
     }
 
-    go(this, 0, Lista[A]())
+    if (n == this.size) (Emp)this
+    else go(this, 0, Lista[A]())
   }
 
   /**
@@ -212,7 +219,8 @@ case class Cons[A] (val head: A, val tail: Lista[A]) extends Lista[A] {
       else res.reverse()
     }
 
-    go(this, 0, Lista[A]())
+    if (this.size == n) this
+    else go(this, 0, Lista[A]())
   }
 
   /* ===== Custom functions. ===== */

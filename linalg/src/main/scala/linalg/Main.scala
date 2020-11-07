@@ -20,15 +20,34 @@ object Main {
         println(b);
         println(" => ");
         println(b.take(2))
+
+        println("Test merge 2:");
+        val c = Lista(1, 1)
+        val d = Lista(2, 2)
+        println(c.merge(d, _-_)) // = should equal [-1, -1] // FIXED
+        //Your solution returns [1, 1]
+
+        //If I drop the entire list I still get one element, e.g.,
+        println("Test drop 2:");
+        val e = Lista(1, 2, 3)
+        println(e.drop(3)) // = should equal []
+        //Your solution returns [3]
+
+        //Your solution misses one element if I take the whole list, e.g.
+        println("Test take(3): ")
+        val g = Lista(1,2,3)
+        println(g.take(3)) // = should equal [1, 2, 3] // FIXED
+        //Your solution returns [1, 2]
     }
 
     def testVec() = {
-        val l = Lista(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+        val l = Lista(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0)
         val v = Vec(l)
         println(v)
 
         println(v.apply(2))
 
+        println("Test vec apply(4 to 8):")
         val r = 4 until 8
         println(v.apply(r))
 
@@ -51,6 +70,18 @@ object Main {
         println(vecS / matS)
 
         println(vecX.dot(mat))
+
+        println("Test vec apply(0 to 1):")
+        val g = Lista(1.0, 2.0, 3.0, 4.0, 5.0)
+        val h = Vec(g)
+        println(h(0 until 1)) // = should equal [1, 2] // FIXED
+        //Your solution returns [1, 2, 5]
+
+        println("Test vec apply(1 to 2):")
+        val v3: Vec = Vec(1, 2, 3)
+        //"v3(1 to 2)" should "be equal to Vec(2, 3)" in {
+        //assert(v3(1 to 2) equals Vec(2, 3)) // FIXED
+        println(v3(1 until 2))
     }
 
     def testMat() = {
@@ -95,9 +126,9 @@ object Main {
     }
 
     def main(args: Array[String]): Unit = {
-        //testLista()
+        testLista()
         //testVec()
-        testMat()
+        //testMat()
         //testPackage()
     }
 }
